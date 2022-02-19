@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MarvelHeroesActivity">
         <activity
-            android:name=".MainActivity"
+            android:name="com.lucas.marvelheroes.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

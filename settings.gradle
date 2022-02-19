@@ -7,4 +7,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "MarvelHeroesActivity"
-include ':app'
+include ':MarvelHeroesApp'

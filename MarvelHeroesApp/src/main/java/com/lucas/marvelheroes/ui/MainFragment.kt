@@ -1,4 +1,4 @@
-package com.lucas.marvelheroesactivity.ui.main
+package com.lucas.marvelheroes.ui
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
@@ -26,7 +26,6 @@ class MainFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-        // TODO: Use the ViewModel
     }
 
 }
