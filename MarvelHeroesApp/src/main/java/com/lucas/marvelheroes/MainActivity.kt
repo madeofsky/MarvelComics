@@ -1,8 +1,9 @@
-package com.lucas.marvelheroesactivity
+package com.lucas.marvelheroes
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.lucas.marvelheroesactivity.ui.main.MainFragment
+import com.lucas.marvelheroes.ui.MainFragment
+import com.lucas.marvelheroesactivity.R
 
 class MainActivity : AppCompatActivity() {
 

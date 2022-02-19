@@ -1,4 +1,4 @@
-package com.lucas.marvelheroesactivity.ui.main
+package com.lucas.marvelheroes.ui
 
 import androidx.lifecycle.ViewModel
 
