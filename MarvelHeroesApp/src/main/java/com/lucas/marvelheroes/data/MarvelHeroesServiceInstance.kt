@@ -1,7 +1,7 @@
-package com.lucas.marvelheroes.network
+package com.lucas.marvelheroes.data
 
-import com.lucas.marvelheroes.model.ComicResponse
-import com.lucas.marvelheroes.utils.MarvelHeroesConstants
+import com.lucas.marvelheroes.data.models.ComicResponse
+import com.lucas.marvelheroes.util.MarvelHeroesConstants
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
