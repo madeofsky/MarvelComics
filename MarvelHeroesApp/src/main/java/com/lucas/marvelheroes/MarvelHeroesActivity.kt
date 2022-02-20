@@ -19,7 +19,7 @@ class MarvelHeroesActivity : AppCompatActivity() {
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, MarvelHeroesListFragment.newInstance())
+                .replace(R.id.container, MarvelHeroesListFragment())
                 .commitNow()
         }
     }
