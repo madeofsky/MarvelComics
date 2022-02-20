@@ -1,4 +1,4 @@
-package com.lucas.marvelheroes.model
+package com.lucas.marvelheroes.data.models
 
 import com.google.gson.annotations.SerializedName
 

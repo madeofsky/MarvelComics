@@ -1,4 +1,4 @@
-package com.lucas.marvelheroes.utils
+package com.lucas.marvelheroes.util
 
 import java.math.BigInteger
 import java.security.MessageDigest
