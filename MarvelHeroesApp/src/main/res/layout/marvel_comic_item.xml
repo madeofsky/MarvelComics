@@ -17,34 +17,34 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageViewHeroImage"
+            android:id="@+id/imageViewComicImage"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_marginStart="18dp"
             android:layout_marginTop="24dp"
-            android:src="@mipmap/ic_launcher_round" />
+            tools:src="@mipmap/ic_launcher_round" />
 
         <TextView
-            android:id="@+id/textViewHeroTitle"
+            android:id="@+id/textViewComicTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/imageViewHeroImage"
+            android:layout_alignTop="@+id/imageViewComicImage"
             android:layout_marginStart="18dp"
             android:layout_marginEnd="18dp"
-            android:layout_toEndOf="@+id/imageViewHeroImage"
+            android:layout_toEndOf="@+id/imageViewComicImage"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold"
             tools:text="Wolverine" />
 
         <TextView
-            android:id="@+id/textViewHeroDescription"
+            android:id="@+id/textViewComicDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewHeroTitle"
+            android:layout_below="@+id/textViewComicTitle"
             android:layout_marginStart="18dp"
             android:layout_marginEnd="18dp"
-            android:layout_toEndOf="@+id/imageViewHeroImage"
+            android:layout_toEndOf="@+id/imageViewComicImage"
             android:textColor="@color/white"
             android:textSize="14sp"
             tools:text="A very important leader among the X Mens. Has adamant claws, that he uses to fight enemies" />

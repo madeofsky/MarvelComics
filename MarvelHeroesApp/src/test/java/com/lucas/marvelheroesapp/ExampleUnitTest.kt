@@ -1,4 +1,4 @@
-package com.lucas.marvelheroesactivity
+package com.lucas.marvelheroesapp
 
 import org.junit.Test
 

@@ -5,9 +5,11 @@
       <map>
         <entry key="..\:/Users/T-Gamer/AndroidStudioProjects/MarvelHeroesActivity/MarvelHeroesApp/src/main/res/drawable/marvel_heroes_card_rounded.xml" value="0.3828125" />
         <entry key="..\:/Users/T-Gamer/AndroidStudioProjects/MarvelHeroesActivity/MarvelHeroesApp/src/main/res/layout/main_activity.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/T-Gamer/AndroidStudioProjects/MarvelHeroesActivity/MarvelHeroesApp/src/main/res/layout/marvel_comic_item.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/T-Gamer/AndroidStudioProjects/MarvelHeroesActivity/MarvelHeroesApp/src/main/res/layout/marvel_heroes_activity.xml" value="0.286231884057971" />
         <entry key="..\:/Users/T-Gamer/AndroidStudioProjects/MarvelHeroesActivity/MarvelHeroesApp/src/main/res/layout/marvel_heroes_comic_item.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/T-Gamer/AndroidStudioProjects/MarvelHeroesActivity/MarvelHeroesApp/src/main/res/layout/marvel_heroes_list_fragment.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/T-Gamer/AndroidStudioProjects/MarvelHeroesActivity/MarvelHeroesApp/src/main/res/xml/network_security_config.xml" value="0.17831813576494426" />
       </map>
     </option>
   </component>

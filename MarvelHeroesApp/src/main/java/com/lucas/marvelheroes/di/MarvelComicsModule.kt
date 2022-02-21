@@ -1,10 +1,10 @@
 package com.lucas.marvelheroes.di
 
-import com.lucas.marvelheroes.data.MarvelHeroesServiceInstance
-import com.lucas.marvelheroes.domain.MarvelHeroesDefaultRepository
-import com.lucas.marvelheroes.domain.MarvelHeroesRepository
-import com.lucas.marvelheroes.util.MarvelHeroesConstants
-import com.lucas.marvelheroes.util.MarvelHeroesDispatcherProvider
+import com.lucas.marvelheroes.data.MarvelComicsServiceInstance
+import com.lucas.marvelheroes.domain.MarvelComicsDefaultRepository
+import com.lucas.marvelheroes.domain.MarvelComicsRepository
+import com.lucas.marvelheroes.util.MarvelComicsConstants
+import com.lucas.marvelheroes.util.MarvelComicsDispatcherProvider
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -18,29 +18,30 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-interface MarvelHeroesModule {
+interface MarvelComicsModule {
 
     @Binds
-    fun provideMarvelHeroesRepository(defaultRepository: MarvelHeroesDefaultRepository): MarvelHeroesRepository
+    fun provideMarvelComicsRepository(defaultRepository: MarvelComicsDefaultRepository): MarvelComicsRepository
 
     companion object {
         @Singleton
         @Provides
-        fun provideMarvelHeroesServiceInstanceInterface(): MarvelHeroesServiceInstance =
+        fun provideMarvelComicsServiceInstanceInterface(): MarvelComicsServiceInstance =
             Retrofit.Builder()
-                .baseUrl(MarvelHeroesConstants.BASE_URL)
+                .baseUrl(MarvelComicsConstants.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
-                .create(MarvelHeroesServiceInstance::class.java)
+                .create(MarvelComicsServiceInstance::class.java)
 
         @Singleton
         @Provides
-        fun provideMarvelHeroesDefaultRepository(apiInstance: MarvelHeroesServiceInstance): MarvelHeroesDefaultRepository =
-            MarvelHeroesDefaultRepository(apiInstance)
+        fun provideMarvelComicsDefaultRepository(apiInstance: MarvelComicsServiceInstance): MarvelComicsDefaultRepository =
+            MarvelComicsDefaultRepository(apiInstance)
 
         @Singleton
         @Provides
-        fun provideMarvelHeroesDispatchers(): MarvelHeroesDispatcherProvider = object : MarvelHeroesDispatcherProvider {
+        fun provideMarvelComicsDispatchers(): MarvelComicsDispatcherProvider = object :
+            MarvelComicsDispatcherProvider {
             override val main: CoroutineDispatcher
                 get() = Dispatchers.Main
 
