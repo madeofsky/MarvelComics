@@ -1,8 +1,8 @@
 package com.lucas.marvelheroes.domain
 
-import com.lucas.marvelheroes.data.MarvelHeroesServiceInstance
+import com.lucas.marvelheroes.data.MarvelComicsServiceInstance
 import com.lucas.marvelheroes.data.models.ComicResponse
-import com.lucas.marvelheroes.util.MarvelHeroesResource
+import com.lucas.marvelheroes.util.MarvelComicsResource
 import java.lang.Exception
 import javax.inject.Inject
 
@@ -11,23 +11,23 @@ import javax.inject.Inject
  * application level for the whole app to use
  */
 
-class MarvelHeroesDefaultRepository @Inject constructor(
-    private val apiInstance: MarvelHeroesServiceInstance
-) : MarvelHeroesRepository {
+class MarvelComicsDefaultRepository @Inject constructor(
+    private val apiInstance: MarvelComicsServiceInstance
+) : MarvelComicsRepository {
 
-    override suspend fun getMarvelHeroesComics(): MarvelHeroesResource<ComicResponse> {
+    override suspend fun getMarvelComics(): MarvelComicsResource<ComicResponse> {
         return try {
             val response = apiInstance.getMarvelHeroesComics()
             val result = response.body()
 
             if (response.isSuccessful && result != null) {
-                MarvelHeroesResource.Success(result)
+                MarvelComicsResource.Success(result)
             } else {
-                MarvelHeroesResource.Error(response.message())
+                MarvelComicsResource.Error(response.message())
             }
 
         } catch (e: Exception) {
-            MarvelHeroesResource.Error(e.message ?: "An error occurred")
+            MarvelComicsResource.Error(e.message ?: "An error occurred")
         }
     }
 }

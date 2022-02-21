@@ -2,13 +2,12 @@ package com.lucas.marvelheroes.util
 
 import java.math.BigInteger
 import java.security.MessageDigest
-import java.sql.Timestamp
 
-class MarvelHeroesConstants {
+class MarvelComicsConstants {
 
  companion object{
      const val BASE_URL = "http://gateway.marvel.com/v1/public/"
-     val TS: String = Timestamp(System.currentTimeMillis()).time.toString()
+     val TS: String = (System.currentTimeMillis() / 100).toString()
 
      const val API_KEY: String = "56d896386d6aadae0d992b37fb7cd27a"
      private const val PRIVATE_KEY: String = "ea74b9ec4249579461dd1b2c76a2eaa6cc030b9d"

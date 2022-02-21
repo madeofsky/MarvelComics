@@ -4,24 +4,24 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.lucas.marvelheroesapp.R
 import com.lucas.marvelheroes.data.models.Comic
-import com.lucas.marvelheroesactivity.R
-import kotlinx.android.synthetic.main.marvel_heroes_comic_item.view.*
+import kotlinx.android.synthetic.main.marvel_comic_item.view.*
 
-class MarvelHeroesListViewHolder(
+class MarvelComicsListViewHolder(
     inflater: LayoutInflater,
     parent: ViewGroup,
     private val listener: OnMarvelHeroCardClickListener
-) : RecyclerView.ViewHolder(inflater.inflate(R.layout.marvel_heroes_comic_item, parent, false)) {
+) : RecyclerView.ViewHolder(inflater.inflate(R.layout.marvel_comic_item, parent, false)) {
 
     fun bind(comic: Comic) {
         itemView.apply {
-            textViewHeroTitle.text = comic.title
-            textViewHeroDescription.text = comic.description
+            textViewComicTitle.text = comic.title
+            textViewComicDescription.text = comic.description
 
             Glide.with(context)
-                .load(comic.thumbnail)
-                .into(imageViewHeroImage)
+                .load("${comic.thumbnail?.path}/portrait_medium.${comic.thumbnail?.extension}")
+                .into(imageViewComicImage)
         }
     }
 

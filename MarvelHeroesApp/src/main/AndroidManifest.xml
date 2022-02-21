@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.lucas.marvelheroesactivity">
+    package="com.lucas.marvelheroesapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name="com.lucas.marvelheroes.MarvelHeroesApplication"
+        android:name="com.lucas.marvelheroes.MarvelComicsApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.MarvelHeroesActivity">
         <activity
-            android:name="com.lucas.marvelheroes.MarvelHeroesActivity"
+            android:name="com.lucas.marvelheroes.MarvelComicsActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

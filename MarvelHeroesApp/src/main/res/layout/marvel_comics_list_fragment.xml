@@ -4,25 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.lucas.marvelheroes.ui.MarvelHeroesListFragment">
+    tools:context="com.lucas.marvelheroesapp.com.lucas.marvelheroes.ui.MarvelComicsListFragment">
 
-    <com.facebook.shimmer.ShimmerFrameLayout
-        android:id="@+id/marvelHeroesListShimmer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+<!--    <com.facebook.shimmer.ShimmerFrameLayout-->
+<!--        android:id="@+id/marvelHeroesListShimmer"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent">-->
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/marvelHeroesRecyclerView"
+            android:id="@+id/marvelComicsRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:listitem="@layout/marvel_heroes_comic_item"
+            tools:listitem="@layout/marvel_comic_item"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    </com.facebook.shimmer.ShimmerFrameLayout>
+<!--    </com.facebook.shimmer.ShimmerFrameLayout>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

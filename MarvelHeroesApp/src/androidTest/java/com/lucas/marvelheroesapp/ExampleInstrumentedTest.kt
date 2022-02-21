@@ -1,4 +1,4 @@
-package com.lucas.marvelheroesactivity
+package com.lucas.marvelheroesapp
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
