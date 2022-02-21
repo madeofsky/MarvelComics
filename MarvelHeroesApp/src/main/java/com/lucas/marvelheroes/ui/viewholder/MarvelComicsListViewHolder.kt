@@ -20,8 +20,8 @@ class MarvelComicsListViewHolder(
             textViewComicDescription.text = comic.description
 
             Glide.with(context)
-                .load("${comic.thumbnail?.path}/portrait_medium.${comic.thumbnail?.extension}")
-                .into(imageViewComicImage)
+                .load("${comic.thumbnail?.path}/standard_amazing.${comic.thumbnail?.extension}")
+                .into(imageViewComicsImage)
         }
     }
 

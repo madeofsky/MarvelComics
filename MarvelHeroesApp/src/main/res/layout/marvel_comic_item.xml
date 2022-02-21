@@ -4,51 +4,70 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#020A21">
+    android:background="#262A37">
 
-    <RelativeLayout
-        android:id="@+id/cardLayout"
+    <ImageView
+        android:id="@+id/imageViewComicsImage"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:layout_margin="12dp"
-        android:background="@drawable/marvel_heroes_card_rounded"
+        android:layout_height="200dp"
+        android:scaleType="fitXY"
+        android:src="@mipmap/ic_launcher_round"
+        android:layout_margin="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <FrameLayout
+        android:id="@+id/frameLayoutCard"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginTop="180dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:background="@drawable/marvel_comics_thumbnail_rounded"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imageViewComicImage"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="18dp"
-            android:layout_marginTop="24dp"
-            tools:src="@mipmap/ic_launcher_round" />
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/frameLayoutCard"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/textViewComicTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="250dp"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/imageViewComicImage"
-            android:layout_marginStart="18dp"
-            android:layout_marginEnd="18dp"
-            android:layout_toEndOf="@+id/imageViewComicImage"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="4dp"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_gravity="center"
+            android:textAlignment="center"
             tools:text="Wolverine" />
 
         <TextView
             android:id="@+id/textViewComicDescription"
-            android:layout_width="wrap_content"
+            android:layout_width="280dp"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/textViewComicTitle"
-            android:layout_marginStart="18dp"
-            android:layout_marginEnd="18dp"
-            android:layout_toEndOf="@+id/imageViewComicImage"
             android:textColor="@color/white"
-            android:textSize="14sp"
-            tools:text="A very important leader among the X Mens. Has adamant claws, that he uses to fight enemies" />
+            android:textSize="12sp"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:layout_marginBottom="12dp"
+            android:maxLines="3"
+            android:ellipsize="end"
+            tools:text="A very important leader among the X Mens. Has adamant claws, that he uses to fight enemies, A very important leader among the X Mens. Has adamant claws, that he uses to fight enemies, A very important leader among the X Mens. Has adamant claws, that he uses to fight enemies, A very important leader among the X Mens. Has adamant claws, that he uses to fight enemies, A very important leader among the X Mens. Has adamant claws, that he uses to fight enemies" />
 
-    </RelativeLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

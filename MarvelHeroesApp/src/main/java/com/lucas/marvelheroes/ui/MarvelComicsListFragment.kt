@@ -12,10 +12,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.lucas.marvelheroes.data.models.Comic
 import com.lucas.marvelheroesapp.databinding.MarvelComicsListFragmentBinding
-import com.lucas.marvelheroes.presentation.MarvelComicsListEvent
 import com.lucas.marvelheroes.presentation.MarvelComicsListViewModel
 import com.lucas.marvelheroes.ui.adapter.MarvelHeroesListAdapter
 import com.lucas.marvelheroes.ui.viewholder.MarvelComicsListViewHolder
+import com.lucas.marvelheroes.util.MarvelComicsListEvent
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
