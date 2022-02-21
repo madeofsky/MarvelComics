@@ -11,6 +11,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 sealed class MarvelHeroesListEvent {
     class Success(val comicsList: List<Comic>) : MarvelHeroesListEvent()
@@ -20,7 +21,7 @@ sealed class MarvelHeroesListEvent {
 }
 
 @HiltViewModel
-class MarvelHeroesListViewModel(
+class MarvelHeroesListViewModel @Inject constructor(
     private val repository: MarvelHeroesRepository,
     private val dispatchers: MarvelHeroesDispatcherProvider
 ) : ViewModel() {
@@ -47,5 +48,7 @@ class MarvelHeroesListViewModel(
             }
         }
     }
+
+    fun onMarvelHeroCardSelect(comic: Comic) {}
 
 }
