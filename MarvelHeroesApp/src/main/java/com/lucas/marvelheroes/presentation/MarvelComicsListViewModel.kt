@@ -5,19 +5,13 @@ import androidx.lifecycle.viewModelScope
 import com.lucas.marvelheroes.data.models.Comic
 import com.lucas.marvelheroes.domain.MarvelComicsRepository
 import com.lucas.marvelheroes.util.MarvelComicsDispatcherProvider
+import com.lucas.marvelheroes.util.MarvelComicsListEvent
 import com.lucas.marvelheroes.util.MarvelComicsResource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-
-sealed class MarvelComicsListEvent {
-    class Success(val comicsList: List<Comic>) : MarvelComicsListEvent()
-    class Failure(val message: String?) : MarvelComicsListEvent()
-    object Loading : MarvelComicsListEvent()
-    object Empty : MarvelComicsListEvent()
-}
 
 @HiltViewModel
 class MarvelComicsListViewModel @Inject constructor(
