@@ -13,6 +13,7 @@ interface MarvelComicsServiceInstance {
         @Query("ts") ts: String = MarvelComicsConstants.TS,
         @Query("apikey") apiKey: String = MarvelComicsConstants.API_KEY,
         @Query("hash") hash: String = MarvelComicsConstants.hash(),
-        @Query("limit") limit: String = MarvelComicsConstants.LIMIT
+        @Query("limit") limit: String = MarvelComicsConstants.LIMIT,
+        @Query("orderBy") orderBy: String = MarvelComicsConstants.GET_MOST_UP_TO_DATE
     ): Response<ComicResponse>
 }

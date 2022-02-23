@@ -12,6 +12,7 @@ class MarvelComicsConstants {
      const val API_KEY: String = "56d896386d6aadae0d992b37fb7cd27a"
      private const val PRIVATE_KEY: String = "ea74b9ec4249579461dd1b2c76a2eaa6cc030b9d"
      const val LIMIT: String = "100"
+     const val GET_MOST_UP_TO_DATE = "-modified"
 
      fun hash(): String {
          val input = "$TS$PRIVATE_KEY$API_KEY"
