@@ -4,60 +4,68 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#262A37">
+    android:layout_marginTop="16dp"
+    android:layout_marginStart="12dp"
+    android:layout_marginEnd="12dp"
+    android:background="@android:color/transparent">
 
-    <ImageView
-        android:id="@+id/imageViewComicsImage"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:scaleType="fitXY"
-        android:src="@mipmap/ic_launcher_round"
-        android:layout_margin="28dp"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="24dp"
-        android:layout_marginRight="24dp"
-        android:layout_marginTop="180dp"
-        android:background="@drawable/marvel_comics_thumbnail_rounded"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            android:background="#010822"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textViewComicTitle"
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="4dp"
-            android:maxLines="1"
-            android:ellipsize="end"
-            android:layout_gravity="center"
-            android:textAlignment="center"
-            tools:text="Wolverine" />
+            <ImageView
+                android:id="@+id/imageViewComicsImage"
+                android:layout_width="90dp"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher_round" />
 
-        <TextView
-            android:id="@+id/textViewComicDescription"
-            android:layout_width="280dp"
-            android:layout_height="wrap_content"
-            android:textColor="@color/white"
-            android:textSize="12sp"
-            android:textAlignment="center"
-            android:layout_gravity="center"
-            android:layout_marginBottom="12dp"
-            android:maxLines="3"
-            android:ellipsize="end"
-            tools:text="A very important leader among the X Mens. Has adamant claws, that he uses to fight enemies, A very important leader among the X Mens. Has adamant claws, that he uses to fight enemies, A very important leader among the X Mens. Has adamant claws, that he uses to fight enemies, A very important leader among the X Mens. Has adamant claws, that he uses to fight enemies, A very important leader among the X Mens. Has adamant claws, that he uses to fight enemies" />
+            <TextView
+                android:id="@+id/textViewComicTitle"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_toEndOf="@id/imageViewComicsImage"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:text="Wolverine" />
 
+            <TextView
+                android:id="@+id/textViewComicDescription"
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textViewComicTitle"
+                android:layout_gravity="center"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginBottom="12dp"
+                android:layout_toEndOf="@id/imageViewComicsImage"
+                android:ellipsize="end"
+                android:maxLines="4"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                tools:text="A very important leader among the X Mens. Has adamant claws, that he uses to fight enemies, A very important leader among the X Mens. Has adamant claws, that he uses to fight enemies, A very important leader among the X Mens. Has adamant claws, that he uses to fight enemies, A very important leader among the X Mens. Has adamant claws, that he uses to fight enemies, A very important leader among the X Mens. Has adamant claws, that he uses to fight enemies" />
 
-    </LinearLayout>
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
