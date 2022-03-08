@@ -1,13 +1,33 @@
 package com.lucas.marvelheroes.domain
 
+import com.lucas.marvelheroes.data.MarvelComicsServiceInstance
 import com.lucas.marvelheroes.data.models.ComicResponse
-import com.lucas.marvelheroes.util.MarvelComicsResource
+import com.lucas.marvelheroes.util.ComicsResource
+import java.lang.Exception
+import javax.inject.Inject
 
 /**
- * The reason why I've made it an interface is that, if I want to test it, I could provide a fake
- * implementation. Testing should be easier and quicker this way, avoiding doing actual requests
+ * Module will provide MarvelHeroesServiceInstance instance for us since it is available at
+ * application level for the whole app to use
  */
-interface MarvelComicsRepository {
 
-    suspend fun getMarvelComics(): MarvelComicsResource<ComicResponse>
+class MarvelComicsRepository @Inject constructor(
+    private val apiInstance: MarvelComicsServiceInstance
+) : ComicsRepository {
+
+    override suspend fun getComics(): ComicsResource<ComicResponse> {
+        return try {
+            val response = apiInstance.getMarvelComics()
+            val result = response.body()
+
+            if (response.isSuccessful && result != null) {
+                ComicsResource.Success(result)
+            } else {
+                ComicsResource.Error(response.message())
+            }
+
+        } catch (e: Exception) {
+            ComicsResource.Error(e.message ?: "An error occurred")
+        }
+    }
 }

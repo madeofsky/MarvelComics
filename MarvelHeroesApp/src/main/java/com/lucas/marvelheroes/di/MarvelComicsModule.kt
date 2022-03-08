@@ -1,10 +1,10 @@
 package com.lucas.marvelheroes.di
 
 import com.lucas.marvelheroes.data.MarvelComicsServiceInstance
-import com.lucas.marvelheroes.domain.MarvelComicsDefaultRepository
 import com.lucas.marvelheroes.domain.MarvelComicsRepository
+import com.lucas.marvelheroes.domain.ComicsRepository
 import com.lucas.marvelheroes.util.MarvelComicsConstants
-import com.lucas.marvelheroes.util.MarvelComicsDispatcherProvider
+import com.lucas.marvelheroes.util.ComicsDispatcherProvider
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -21,7 +21,7 @@ import javax.inject.Singleton
 interface MarvelComicsModule {
 
     @Binds
-    fun provideMarvelComicsRepository(defaultRepository: MarvelComicsDefaultRepository): MarvelComicsRepository
+    fun provideMarvelComicsRepository(repositoryMarvel: MarvelComicsRepository): ComicsRepository
 
     companion object {
         @Singleton
@@ -35,13 +35,13 @@ interface MarvelComicsModule {
 
         @Singleton
         @Provides
-        fun provideMarvelComicsDefaultRepository(apiInstance: MarvelComicsServiceInstance): MarvelComicsDefaultRepository =
-            MarvelComicsDefaultRepository(apiInstance)
+        fun provideMarvelComicsDefaultRepository(apiInstance: MarvelComicsServiceInstance): MarvelComicsRepository =
+            MarvelComicsRepository(apiInstance)
 
         @Singleton
         @Provides
-        fun provideMarvelComicsDispatchers(): MarvelComicsDispatcherProvider = object :
-            MarvelComicsDispatcherProvider {
+        fun provideMarvelComicsDispatchers(): ComicsDispatcherProvider = object :
+            ComicsDispatcherProvider {
             override val main: CoroutineDispatcher
                 get() = Dispatchers.Main
 

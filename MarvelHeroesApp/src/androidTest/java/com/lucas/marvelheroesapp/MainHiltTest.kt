@@ -1,8 +1,8 @@
 package com.lucas.marvelheroesapp
 
 import com.lucas.marvelheroes.di.MarvelComicsModule
-import com.lucas.marvelheroes.domain.MarvelComicsRepository
-import com.lucas.marvelheroes.util.MarvelComicsDispatcherProvider
+import com.lucas.marvelheroes.domain.ComicsRepository
+import com.lucas.marvelheroes.util.ComicsDispatcherProvider
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -62,7 +62,7 @@ class MainHiltTest {
     var hiltRule = HiltAndroidRule(this)
 
     @Inject
-    lateinit var fakeComicsRepository: MarvelComicsRepository
+    lateinit var fakeComicsRepository: ComicsRepository
 
     /**
      * We can define a variable annotated with @BindValue to provide our fake or we can define a
@@ -79,7 +79,7 @@ class MainHiltTest {
 
     @Test
     fun someTest() = runBlocking {
-        Assert.assertTrue(fakeComicsRepository.getMarvelComics().resultData != null)
+        Assert.assertTrue(fakeComicsRepository.getComics().resultData != null)
     }
 
     @Module
@@ -91,13 +91,13 @@ class MainHiltTest {
     interface TestMarvelComicsModule {
 
         @Binds
-        fun provideMarvelComicsRepository(fakeRepository: FakeMarvelComicsRepository): MarvelComicsRepository
+        fun provideMarvelComicsRepository(fakeRepository: FakeComicsRepository): ComicsRepository
 
         companion object {
             @Singleton
             @Provides
-            fun provideMarvelComicsDispatchers(): MarvelComicsDispatcherProvider = object :
-                MarvelComicsDispatcherProvider {
+            fun provideMarvelComicsDispatchers(): ComicsDispatcherProvider = object :
+                ComicsDispatcherProvider {
                 override val main: CoroutineDispatcher
                     get() = Dispatchers.Main
 

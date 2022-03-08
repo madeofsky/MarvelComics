@@ -9,7 +9,7 @@ import retrofit2.http.Query
 interface MarvelComicsServiceInstance {
 
     @GET("comics")
-    suspend fun getMarvelHeroesComics(
+    suspend fun getMarvelComics(
         @Query("ts") ts: String = MarvelComicsConstants.TS,
         @Query("apikey") apiKey: String = MarvelComicsConstants.API_KEY,
         @Query("hash") hash: String = MarvelComicsConstants.hash(),

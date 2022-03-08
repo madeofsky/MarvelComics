@@ -12,10 +12,10 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.lucas.marvelheroes.data.models.Comic
 import com.lucas.marvelheroesapp.databinding.MarvelComicsListFragmentBinding
-import com.lucas.marvelheroes.presentation.MarvelComicsListViewModel
+import com.lucas.marvelheroes.presentation.ComicsListViewModel
 import com.lucas.marvelheroes.ui.adapter.MarvelHeroesListAdapter
 import com.lucas.marvelheroes.ui.viewholder.MarvelComicsListViewHolder
-import com.lucas.marvelheroes.util.MarvelComicsListEvent
+import com.lucas.marvelheroes.util.ComicsListEvent
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -23,7 +23,7 @@ class MarvelComicsListFragment : Fragment() {
 
     private lateinit var binding: MarvelComicsListFragmentBinding
 
-    private val viewModel: MarvelComicsListViewModel by viewModels()
+    private val viewModel: ComicsListViewModel by viewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = MarvelComicsListFragmentBinding.inflate(layoutInflater)
@@ -50,14 +50,14 @@ class MarvelComicsListFragment : Fragment() {
         lifecycleScope.launchWhenStarted {
             viewModel.comics.collect { comicsEvent ->
                 when (comicsEvent) {
-                    is MarvelComicsListEvent.Loading -> {
+                    is ComicsListEvent.Loading -> {
                         setupComicsListShimmer(true)
                     }
-                    is MarvelComicsListEvent.Failure -> {
+                    is ComicsListEvent.Failure -> {
                         setupComicsListShimmer(false)
                         Toast.makeText(requireContext(), comicsEvent.message, Toast.LENGTH_LONG).show()
                     }
-                    is MarvelComicsListEvent.Success -> {
+                    is ComicsListEvent.Success -> {
                         setupComicsListShimmer(false)
                         initAdapter(comicsEvent.comicsList)
                     }
